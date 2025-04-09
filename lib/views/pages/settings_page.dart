@@ -137,9 +137,6 @@ class _SettingsPageState extends State<SettingsPage> {
               ),
               InkWell(
                 splashColor: Colors.teal,
-                onTap: () {
-                  print("Image Selected");
-                },
                 child: Container(
                   height: 50,
                   width: double.infinity,
