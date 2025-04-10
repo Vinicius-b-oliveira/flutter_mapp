@@ -24,22 +24,26 @@ class HeroWidget extends StatelessWidget {
         children: [
           Hero(
             tag: 'hero1',
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(20.0),
-              child: ValueListenableBuilder(
-                valueListenable: isDarkThemeNotifier,
-                builder: (
-                  BuildContext context,
-                  bool isDarkTheme,
-                  Widget? child,
-                ) {
-                  return Image.asset(
-                    'assets/images/welcome.jpg',
-                    color: Colors.teal,
-                    colorBlendMode:
-                        isDarkTheme ? BlendMode.darken : BlendMode.hardLight,
-                  );
-                },
+            child: AspectRatio(
+              aspectRatio: 1920 / 1080,
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(20.0),
+                child: ValueListenableBuilder(
+                  valueListenable: isDarkThemeNotifier,
+                  builder: (
+                    BuildContext context,
+                    bool isDarkTheme,
+                    Widget? child,
+                  ) {
+                    return Image.asset(
+                      'assets/images/welcome.jpg',
+                      color: Colors.teal,
+                      colorBlendMode:
+                          isDarkTheme ? BlendMode.darken : BlendMode.hardLight,
+                      fit: BoxFit.cover,
+                    );
+                  },
+                ),
               ),
             ),
           ),
